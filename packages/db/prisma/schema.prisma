@@ -5,8 +5,8 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = "postgresql://neondb_owner:npg_2mkne4IpDcqJ@ep-quiet-union-adf3kxug-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
-}
+  url      = env("DATABASE_URL")
+  }
 
 
 model User{
@@ -14,7 +14,7 @@ model User{
   email String
   password String
   name String
-  photo String
+  photo String?
   rooms Room[]
 }
 
